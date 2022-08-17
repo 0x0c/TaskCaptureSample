@@ -1,0 +1,149 @@
+included:
+  - TaskCaptureSample
+excluded:
+# analyzer_rules:
+#   - unused_declaration
+#   - unused_import
+file_length:
+  - 600 # warning
+  - 700 # error
+line_length:
+  - 150 # warning
+  - 300 # error
+function_body_length:
+  - 100   # warning
+  - 200   # error
+type_body_length:
+  - 400   # warning
+  - 600   # error
+type_name:
+  max_length: # warning and error
+    warning: 50
+    error: 60
+cyclomatic_complexity:
+  ignores_case_statements: true
+closure_body_length:
+  - 50 # warning
+  - 100 # error
+opt_in_rules:
+  - accessibility_label_for_image
+  - anyobject_protocol
+  - array_init
+  - attributes
+  - balanced_xctest_lifecycle
+  - capture_variable
+  - closure_body_length
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - conditional_returns_on_newline
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
+  - discarded_notification_center_observer
+  - discouraged_assert
+  - discouraged_none_name
+  - discouraged_object_literal
+  - discouraged_optional_boolean
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - empty_xctest_method
+  - enum_case_associated_values_count
+  - expiring_todo
+  - explicit_init
+  - explicit_self
+  - extension_access_modifier
+  - fallthrough
+  - fatal_error_message
+  - file_name_no_space
+  - first_where
+  - flatmap_over_map_reduce
+  - force_unwrapping
+  - function_default_parameter_at_end
+  - ibinspectable_in_extension
+  - identical_operands
+  - joined_default_parameter
+  - last_where
+  - legacy_multiple
+  - let_var_whitespace
+  - literal_expression_end_indentation
+  - lower_acl_than_parent
+  - modifier_order
+  - multiline_literal_brackets
+  - multiline_parameters
+  - multiline_parameters_brackets
+  - nimble_operator
+  - number_separator
+  - object_literal
+  - operator_usage_whitespace
+  - optional_enum_case_matching
+  - overridden_super_call
+  - override_in_extension
+  - pattern_matching_keywords
+  - prefer_nimble
+  - prefer_self_type_over_type_of_self
+  - prefer_zero_over_explicit_init
+  - prefixed_toplevel_constant
+  - private_action
+  - private_outlet
+  - prohibited_interface_builder
+  - prohibited_super_call
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+  - raw_value_for_camel_cased_codable_enum
+  - reduce_into
+  - redundant_nil_coalescing
+  - redundant_type_annotation
+  - required_enum_case
+  - return_value_from_void_function
+  - single_test_class
+  - sorted_first_last
+  - sorted_imports
+  - static_operator
+  - strong_iboutlet
+  - switch_case_on_newline
+  - test_case_accessibility
+  - toggle_bool
+  - typesafe_array_init
+  - unavailable_function
+  - unneeded_parentheses_in_closure_argument
+  - untyped_error_in_catch
+  - unused_declaration
+  - unused_import
+  - vertical_whitespace_closing_braces
+  - vertical_whitespace_opening_braces
+  - weak_delegate
+  - xct_specific_matcher
+  - yoda_condition
+disabled_rules:
+  - file_header
+  - file_name
+  - force_cast
+  - nesting
+  - nslocalizedstring_key
+  - prohibited_interface_builder
+  - statement_position
+  - unowned_variable_capture
+identifier_name:
+  min_length: # only min_length
+    - 2
+  excluded:
+    - c
+number_separator:
+  minimum_length: 5
+custom_rules:
+  rule_id:
+    included: Source/SwiftLintFramework/Rules/.+/\w+\.swift
+    name: Rule ID
+    message: Rule IDs must be all lowercase, snake case and not end with `rule`
+    regex: identifier:\s*("\w+_rule"|"\S*[^a-z_]\S*")
+    severity: error
+  rule_test_function:
+    name: Rule Test Function
+    message: Rule Test Function mustn't end with `rule`
+    regex: func\s*test\w+(r|R)ule\(\)
+    severity: error

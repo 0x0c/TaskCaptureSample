@@ -1,24 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CRq-jB-KUc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TaskCaptureSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTo-Xz-Deo">
+                                <rect key="frame" x="178.5" y="432.5" width="57" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Push"/>
+                                <connections>
+                                    <segue destination="sWD-9s-NLB" kind="show" id="vAq-TS-oXf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BTo-Xz-Deo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IfR-jj-dsO"/>
+                            <constraint firstItem="BTo-Xz-Deo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jNH-0P-lvN"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1iD-Wi-Bua"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="83.705357142857139"/>
+        </scene>
+        <!--Task View Controller-->
+        <scene sceneID="8y6-xh-jLE">
+            <objects>
+                <viewController id="sWD-9s-NLB" customClass="TaskViewController" customModule="TaskCaptureSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2uu-M0-jWG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="fdJ-8N-hTT">
+                                <rect key="frame" x="100.5" y="243" width="213.5" height="410.5"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5mK-gz-ar2">
+                                        <rect key="frame" x="88" y="0.0" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKg-eU-dVK">
+                                        <rect key="frame" x="72" y="70" width="69" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1t-nQ-pg5">
+                                        <rect key="frame" x="50.5" y="123.5" width="112" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Run long task"/>
+                                        <connections>
+                                            <action selector="runLongTask" destination="sWD-9s-NLB" eventType="touchUpInside" id="tVo-sO-whB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcx-gi-cUh">
+                                        <rect key="frame" x="32" y="187.5" width="149" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Run long weak task"/>
+                                        <connections>
+                                            <action selector="runLongWeakTask" destination="sWD-9s-NLB" eventType="touchUpInside" id="Z7w-mT-W6T"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJI-kC-IZX">
+                                        <rect key="frame" x="12.5" y="251.5" width="188.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Run long task with cancel"/>
+                                        <connections>
+                                            <action selector="runLongTaskWithCancel" destination="sWD-9s-NLB" eventType="touchUpInside" id="wsk-dk-B48"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBb-Mg-hqg">
+                                        <rect key="frame" x="18.5" y="315.5" width="176.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Run long detached task"/>
+                                        <connections>
+                                            <action selector="runLongDetachedTask" destination="sWD-9s-NLB" eventType="touchUpInside" id="Tcn-UH-Cnw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeg-8p-OOE">
+                                        <rect key="frame" x="0.0" y="379.5" width="213.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Run long detached weak task"/>
+                                        <connections>
+                                            <action selector="runLongDetachedWeakTask" destination="sWD-9s-NLB" eventType="touchUpInside" id="fUq-FU-OBC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OR0-Bz-xV8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fdJ-8N-hTT" firstAttribute="centerY" secondItem="2uu-M0-jWG" secondAttribute="centerY" id="B21-ve-IMX"/>
+                            <constraint firstItem="fdJ-8N-hTT" firstAttribute="centerX" secondItem="2uu-M0-jWG" secondAttribute="centerX" id="YU6-iw-CQq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q99-2j-N32"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="5mK-gz-ar2" id="gPE-mS-Kct"/>
+                        <outlet property="label" destination="CKg-eU-dVK" id="Wn2-ds-t3J"/>
+                        <outletCollection property="buttons" destination="p1t-nQ-pg5" collectionClass="NSMutableArray" id="328-Qt-6QI"/>
+                        <outletCollection property="buttons" destination="Qcx-gi-cUh" collectionClass="NSMutableArray" id="ArO-Ey-cfe"/>
+                        <outletCollection property="buttons" destination="GJI-kC-IZX" collectionClass="NSMutableArray" id="0PR-UC-JP9"/>
+                        <outletCollection property="buttons" destination="WBb-Mg-hqg" collectionClass="NSMutableArray" id="MNO-te-ehh"/>
+                        <outletCollection property="buttons" destination="oeg-8p-OOE" collectionClass="NSMutableArray" id="fuP-nq-5jp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVj-4L-f7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="84"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xHR-Jh-Hvz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CRq-jB-KUc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WMR-HA-fBN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="B3y-u5-ddL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6l-Te-Ufx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

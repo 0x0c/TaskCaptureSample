@@ -13,6 +13,8 @@
 		E99A40B828AC704200967EBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99A40B628AC704200967EBC /* Main.storyboard */; };
 		E99A40BA28AC704400967EBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99A40B928AC704400967EBC /* Assets.xcassets */; };
 		E99A40BD28AC704400967EBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99A40BB28AC704400967EBC /* LaunchScreen.storyboard */; };
+		E99A40C728AC706600967EBC /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A40C628AC706600967EBC /* TaskViewController.swift */; };
+		E99A40CA28AC7E1E00967EBC /* LocalConsole in Frameworks */ = {isa = PBXBuildFile; productRef = E99A40C928AC7E1E00967EBC /* LocalConsole */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		E99A40B928AC704400967EBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E99A40BC28AC704400967EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E99A40BE28AC704400967EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E99A40C628AC706600967EBC /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99A40CA28AC7E1E00967EBC /* LocalConsole in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +63,7 @@
 				E99A40B028AC704200967EBC /* AppDelegate.swift */,
 				E99A40B228AC704200967EBC /* SceneDelegate.swift */,
 				E99A40B428AC704200967EBC /* ViewController.swift */,
+				E99A40C628AC706600967EBC /* TaskViewController.swift */,
 				E99A40B628AC704200967EBC /* Main.storyboard */,
 				E99A40B928AC704400967EBC /* Assets.xcassets */,
 				E99A40BB28AC704400967EBC /* LaunchScreen.storyboard */,
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = TaskCaptureSample;
+			packageProductDependencies = (
+				E99A40C928AC7E1E00967EBC /* LocalConsole */,
+			);
 			productName = TaskCaptureSample;
 			productReference = E99A40AD28AC704200967EBC /* TaskCaptureSample.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = E99A40A428AC704200967EBC;
+			packageReferences = (
+				E99A40C828AC7E1E00967EBC /* XCRemoteSwiftPackageReference "LocalConsole" */,
+			);
 			productRefGroup = E99A40AE28AC704200967EBC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99A40B528AC704200967EBC /* ViewController.swift in Sources */,
+				E99A40C728AC706600967EBC /* TaskViewController.swift in Sources */,
 				E99A40B128AC704200967EBC /* AppDelegate.swift in Sources */,
 				E99A40B328AC704200967EBC /* SceneDelegate.swift in Sources */,
 			);
@@ -358,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E99A40C828AC7E1E00967EBC /* XCRemoteSwiftPackageReference "LocalConsole" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/duraidabdul/LocalConsole/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E99A40C928AC7E1E00967EBC /* LocalConsole */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E99A40C828AC7E1E00967EBC /* XCRemoteSwiftPackageReference "LocalConsole" */;
+			productName = LocalConsole;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E99A40A528AC704200967EBC /* Project object */;
 }
